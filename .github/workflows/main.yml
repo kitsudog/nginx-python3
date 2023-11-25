@@ -28,7 +28,7 @@ jobs:
       - name: Login to DockerHub
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          username: kitsudo
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
       - name: Build and push image
@@ -42,4 +42,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ${{ secrets.DOCKER_HUB_USERNAME }}/nginx-python:3.9
+            kitsudo/nginx-python:3.10
